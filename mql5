@@ -1,0 +1,91 @@
+
+// Trade The Box - Automated Forex Trading Software
+// Developer: Forex Robot Easy Team
+// Developer's Site: forexroboteasy.com
+
+// Define necessary variables
+double BoxLow, BoxHigh;
+double EntryPrice, StopLoss, TakeProfit;
+bool TradeActivated = false;
+
+// Function to activate trades with a double-click
+void OnDoubleClick()
+{
+    // Check if trade is already activated
+    if (TradeActivated)
+    {
+        Print('Trade is already activated.');
+        return;
+    }
+    
+    // Set trading plan and select range with the BOX
+    SetTradingPlan();
+    SelectRangeWithBox();
+    
+    // Execute the trading plan without deviation
+    ExecuteTradingPlan();
+}
+
+// Function to set the trading plan
+void SetTradingPlan()
+{
+    // Set the entry price, stop loss, and take profit levels
+    EntryPrice = 1.1000; // Example entry price
+    StopLoss = 1.0950; // Example stop loss level
+    TakeProfit = 1.1050; // Example take profit level
+    
+    // Print the trading plan for reference
+    Print('Trading Plan:');
+    Print('Entry Price: ', EntryPrice);
+    Print('Stop Loss: ', StopLoss);
+    Print('Take Profit: ', TakeProfit);
+}
+
+// Function to select range with the BOX
+void SelectRangeWithBox()
+{
+    // Set the low and high levels of the BOX
+    BoxLow = 1.0980; // Example low level
+    BoxHigh = 1.1020; // Example high level
+    
+    // Print the selected range for reference
+    Print('Selected Range:');
+    Print('Box Low: ', BoxLow);
+    Print('Box High: ', BoxHigh);
+}
+
+// Function to execute the trading plan
+void ExecuteTradingPlan()
+{
+    // Set the trade activation flag to true
+    TradeActivated = true;
+    
+    // Place the trade with the specified entry price, stop loss, and take profit levels
+    // Code to place the trade goes here
+    
+    // Print trade execution details
+    Print('Trade Activated!');
+    Print('Entry Price: ', EntryPrice);
+    Print('Stop Loss: ', StopLoss);
+    Print('Take Profit: ', TakeProfit);
+    
+    // Manage the trade
+    ManageTrade();
+}
+
+// Function to manage the trade
+void ManageTrade()
+{
+    // Code to manage the trade goes here
+    // Secure positions, book partial profits, and trail the trade
+    
+    // Print trade management details
+    Print('Trade Managed!');
+}
+
+// Program entry point
+void OnStart()
+{
+    // Run the program
+    OnDoubleClick();
+}
